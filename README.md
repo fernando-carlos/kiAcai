@@ -1,0 +1,383 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ki Açaí | Cardápio</title>
+
+<body>
+</body>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+--primary:#ff0000;
+--secondary:#ff8800;
+--bg:#111111;
+--card:#ffffff;
+--text:#fdfdfd;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins}
+
+body{
+background:var(--bg);
+color:var(--text);
+padding-bottom:120px;
+}
+
+header{
+background:linear-gradient(135deg,var(--primary),var(--secondary));
+padding:40px 20px;
+border-radius:0 0 35px 35px;
+text-align:center;
+}
+
+.container{
+max-width:1200px;
+margin:-30px auto 0;
+padding:0 20px;
+}
+
+.section-title{
+font-size:1.4rem;
+font-weight:700;
+margin:30px 0 15px;
+}
+
+.cards-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:18px;
+}
+
+.card{
+background:var(--card);
+border-radius:22px;
+padding:15px;
+box-shadow:0 12px 30px rgba(0,0,0,.12);
+display:flex;
+gap:15px;
+align-items:flex-start;
+}
+
+.card img{
+width:80px;
+height:80px;
+border-radius:16px;
+object-fit:cover;
+}
+
+.card-content{
+flex:1;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:12px;
+}
+
+.card h3{
+font-size:1.05rem;
+color:#c7110a;
+}
+
+.card p{
+font-size:.82rem;
+color:#666;
+grid-column:1/-1;
+}
+
+.options{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:4px 10px;
+font-size:.8rem;
+color:#000;
+}
+
+.options strong,
+.options p{
+grid-column:1/-1;
+font-weight:600;
+margin-top:6px;
+}
+
+.price-row{
+grid-column:1/-1;
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-top:8px;
+}
+
+.price{
+font-size:1.2rem;
+font-weight:700;
+color:var(--primary);
+}
+
+.btn{
+background:var(--primary);
+color:#fff;
+border:none;
+padding:8px 16px;
+border-radius:14px;
+cursor:pointer;
+}
+
+#cart{
+position:fixed;
+bottom:15px;
+left:50%;
+transform:translateX(-50%);
+width:90%;
+max-width:480px;
+background:var(--primary);
+color:#fff;
+padding:16px 24px;
+border-radius:22px;
+display:none;
+justify-content:space-between;
+align-items:center;
+font-weight:600;
+cursor:pointer;
+}
+
+@media(max-width:600px){
+.card-content{
+grid-template-columns:1fr;
+}
+
+.animado{
+  color:#ff0000;
+  animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+  0%{opacity:1}
+  50%{opacity:.5}
+  100%{opacity:1}
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Ki <span class="animado">Açaí</span>🍇🍔</h1>
+<h3>Açaí • Hambúrguer • Bebidas • Combos</h3>
+</header>
+
+<div class="container">
+
+<div class="section-title">🥣 Monte seu Açaí</div>
+
+<div class="cards-grid">
+
+<!-- CARD -->
+<div class="card">
+<img src="https://img.freepik.com/fotos-premium/vibrante-tigela-de-acai-com-granola-de-frutas-tropicais-e-superalimentos-em-fundo-de-madeira_1287633-12807.jpg">
+<div class="card-content">
+
+<h3>Açaí 770ml</h3>
+<p>Cremoso, gelado e irresistível</p>
+
+<div class="options">
+<strong>Acompanhamentos (+R$2)</strong>
+<label><input type="checkbox" value="Leite Ninho"> Leite Ninho</label>
+<label><input type="checkbox" value="Granola"> Granola</label>
+<label><input type="checkbox" value="Paçoca"> Paçoca</label>
+<label><input type="checkbox" value="Amendoim"> Amendoim</label>
+<label><input type="checkbox" value="Amendoim"> Jujuba</label>
+<label><input type="checkbox" value="Amendoim"> Aveia</label>
+<label><input type="checkbox" value="Amendoim"> Confetes</label>
+<label><input type="checkbox" value="Amendoim"> bolinha de chocolate</label>
+<p>frutas</p>
+<label><input type="checkbox" value="Morango"> Morango</label>
+<label><input type="checkbox" value="Banana"> Banana</label>
+<label><input type="checkbox" value="Manga"> Manga</label>
+<label><input type="checkbox" value="Abacaxi"> Abacaxi</label></fruit>
+
+</div>
+
+<div class="price-row">
+<span class="price">R$ 30,50</span>
+<button class="btn" onclick="addAcai(this,30.50,'770ml')">Adicionar</button>
+</div>
+
+</div>
+</div>
+
+<!-- CARD -->
+<div class="card">
+<img src="https://img.freepik.com/fotos-premium/vibrante-tigela-de-acai-com-granola-de-frutas-tropicais-e-superalimentos-em-fundo-de-madeira_1287633-12807.jpg">
+<div class="card-content">
+
+<h3>Açaí 500ml</h3>
+<p>Cremoso, gelado e irresistível</p>
+
+<div class="options">
+<strong>Acompanhamentos (+R$2)</strong>
+<label><input type="checkbox" value="Leite Ninho"> Leite Ninho</label>
+<label><input type="checkbox" value="Granola"> Granola</label>
+<label><input type="checkbox" value="Paçoca"> Paçoca</label>
+<label><input type="checkbox" value="Amendoim"> Amendoim</label>
+<label><input type="checkbox" value="Amendoim"> Jujuba</label>
+<label><input type="checkbox" value="Amendoim"> Aveia</label>
+<label><input type="checkbox" value="Amendoim"> Confetes</label>
+<label><input type="checkbox" value="Amendoim"> bolinha de chocolate</label>
+<p>frutas</p>
+<label><input type="checkbox" value="Morango"> Morango</label>
+<label><input type="checkbox" value="Banana"> Banana</label>
+<label><input type="checkbox" value="Manga"> Manga</label>
+<label><input type="checkbox" value="Abacaxi"> Abacaxi</label></fruit>
+</div>
+
+<div class="price-row">
+<span class="price">R$ 25,50</span>
+<button class="btn" onclick="addAcai(this,25.50,'500ml')">Adicionar</button>
+</div>
+
+</div>
+</div>
+
+<!-- CARD -->
+<div class="card">
+<img src="https://img.freepik.com/fotos-premium/vibrante-tigela-de-acai-com-granola-de-frutas-tropicais-e-superalimentos-em-fundo-de-madeira_1287633-12807.jpg">
+<div class="card-content">
+
+<h3>Açaí 300ml</h3>
+<p>Cremoso, gelado e irresistível</p>
+
+<div class="options">
+<strong>Acompanhamentos (+R$2)</strong>
+<label><input type="checkbox" value="Leite Ninho"> Leite Ninho</label>
+<label><input type="checkbox" value="Granola"> Granola</label>
+<label><input type="checkbox" value="Paçoca"> Paçoca</label>
+<label><input type="checkbox" value="Amendoim"> Amendoim</label>
+<label><input type="checkbox" value="Amendoim"> Jujuba</label>
+<label><input type="checkbox" value="Amendoim"> Aveia</label>
+<label><input type="checkbox" value="Amendoim"> Confetes</label>
+<label><input type="checkbox" value="Amendoim"> bolinha de chocolate</label>
+<p>frutas</p>
+<label><input type="checkbox" value="Morango"> Morango</label>
+<label><input type="checkbox" value="Banana"> Banana</label>
+<label><input type="checkbox" value="Manga"> Manga</label>
+<label><input type="checkbox" value="Abacaxi"> Abacaxi</label></fruit>
+</div>
+
+<div class="price-row">
+<span class="price">R$ 17,50</span>
+<button class="btn" onclick="addAcai(this,17.50,'300ml')">Adicionar</button>
+</div>
+
+</div>
+</div>
+
+<!-- CARD -->
+<div class="card">
+<img src="https://img.freepik.com/fotos-premium/vibrante-tigela-de-acai-com-granola-de-frutas-tropicais-e-superalimentos-em-fundo-de-madeira_1287633-12807.jpg">
+<div class="card-content">
+
+<h3>Açaí 200ml</h3>
+<p>Cremoso, gelado e irresistível</p>
+
+<div class="options">
+<strong>Acompanhamentos (+R$2)</strong>
+<label><input type="checkbox" value="Leite Ninho"> Leite Ninho</label>
+<label><input type="checkbox" value="Granola"> Granola</label>
+<label><input type="checkbox" value="Paçoca"> Paçoca</label>
+<label><input type="checkbox" value="Amendoim"> Amendoim</label>
+<label><input type="checkbox" value="Amendoim"> Jujuba</label>
+<label><input type="checkbox" value="Amendoim"> Aveia</label>
+<label><input type="checkbox" value="Amendoim"> Confetes</label>
+<label><input type="checkbox" value="Amendoim"> bolinha de chocolate</label>
+<p>frutas</p>
+<label><input type="checkbox" value="Morango"> Morango</label>
+<label><input type="checkbox" value="Banana"> Banana</label>
+<label><input type="checkbox" value="Manga"> Manga</label>
+<label><input type="checkbox" value="Abacaxi"> Abacaxi</label></fruit>
+</div>
+
+<div class="price-row">
+<span class="price">R$ 12,50</span>
+<button class="btn" onclick="addAcai(this,12.50,'200ml')">Adicionar</button>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+<div id="cart" onclick="sendWhatsApp()">
+<span id="count">0 itens</span>
+<span id="total">R$ 0,00</span>
+</div>
+
+<script>
+let cart=[];
+let subtotal=0;
+
+document.addEventListener('change',e=>{
+if(e.target.classList.contains('fruit')){
+let card=e.target.closest('.card');
+let fruits=card.querySelectorAll('.fruit:checked');
+if(fruits.length>3){
+alert('Você pode escolher até 3 frutas grátis 🍓');
+e.target.checked=false;
+}
+}
+});
+
+function addAcai(btn,basePrice,size){
+  let card = btn.closest('.card');
+  let price = basePrice;
+  let acc = [];
+
+  let fruits = card.querySelectorAll('.fruit:checked');
+  let extras = card.querySelectorAll('.options input:checked:not(.fruit)');
+
+  extras.forEach(i=>{
+    acc.push(i.value);
+    price += 2;
+  });
+
+  fruits.forEach(i=>{
+    acc.push(i.value);
+  });
+
+  if(fruits.length > 3){
+    price += (fruits.length - 3) * 2;
+  }
+
+  card.querySelectorAll('input').forEach(i=>i.checked=false);
+
+  cart.push({
+    name:`Açaí ${size} (${acc.length ? acc.join(', ') : 'sem adicionais'})`,
+    price
+  });
+
+  subtotal += price;
+  updateCart();
+}
+
+function updateCart(){
+document.getElementById('cart').style.display='flex';
+document.getElementById('count').innerText=cart.length+' itens';
+document.getElementById('total').innerText='R$ '+subtotal.toFixed(2);
+}
+
+function sendWhatsApp(){
+  let msg='🛒 *Pedido Ki Açaí*\n\n';
+  cart.forEach(i=>{
+    msg+=`• ${i.name}\n   R$ ${i.price.toFixed(2)}\n\n`;
+  });
+  msg+=`*Total: R$ ${subtotal.toFixed(2)}*`;
+  window.open(`https://wa.me/5521990313436?text=${encodeURIComponent(msg)}`);
+}
+</script>
+
+</body>
+</html>
